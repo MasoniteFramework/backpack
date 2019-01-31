@@ -2,6 +2,7 @@
 
 from __future__ import division
 
+import random
 import simplejson as json
 from copy import copy
 
@@ -780,6 +781,9 @@ class BaseCollection(object):
         :rtype: str
         """
         return json.dumps(self.serialize(), **options)
+
+    def random(self):
+        return random.choice(self.items)
 
     def __len__(self):
         return len(self.items)
