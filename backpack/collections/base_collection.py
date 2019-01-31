@@ -781,6 +781,19 @@ class BaseCollection(object):
         """
         return json.dumps(self.serialize(), **options)
 
+    def combine(self, *values):
+        """
+        Combines and zips 2 lists into a dictionary value
+
+        :type values: list
+
+        :rtype: dict
+        """
+        if isinstance(values[0], list):
+            values = values[0]
+
+        return dict(zip(values, self.items))
+
     def __len__(self):
         return len(self.items)
 

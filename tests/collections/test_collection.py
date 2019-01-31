@@ -256,3 +256,11 @@ class CollectionTestCase(TestCase):
 
         c = Collection([1, [2, 3], 4])
         self.assertEqual([1, 2, 3, 4], c.flatten().all())
+
+    def test_combine(self):
+        c = Collection([1, 2])
+        combined = c.combine('John', 'Joe')
+        self.assertEqual(combined, {'John': 1, 'Joe': 2})
+
+        combined = c.combine(['John', 'Joe'])
+        self.assertEqual(combined, {'John': 1, 'Joe': 2})
