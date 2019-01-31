@@ -256,3 +256,8 @@ class CollectionTestCase(TestCase):
 
         c = Collection([1, [2, 3], 4])
         self.assertEqual([1, 2, 3, 4], c.flatten().all())
+
+    def test_index(self):
+        c = Collection([1, 2, 3, 4])
+
+        self.assertEqual(1, c.index(2))

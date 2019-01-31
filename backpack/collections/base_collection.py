@@ -781,6 +781,16 @@ class BaseCollection(object):
         """
         return json.dumps(self.serialize(), **options)
 
+    def index(self, value):
+        """
+        Gets the index of the method based on a value.
+        
+        :type value: int or object
+
+        :rtype: int
+        """
+        return self.items.index(value)
+
     def __len__(self):
         return len(self.items)
 
